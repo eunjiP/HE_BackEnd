@@ -7,3 +7,34 @@
 코드이그타이터4 설치 : https://www.youtube.com/watch?v=XKF7I9Hfc9w&list=PLYmSK8x2G28uyohFLJRCGHcFibknWawO8&index=5
 
 https://cikorea.net/
+
+프로젝트명 : 행복하지구(With Earth)
+=====
+<img src="https://user-images.githubusercontent.com/101936519/185729612-9ea98b16-7dc0-4777-ad31-5e38d46f2520.png" width=200px>
+
+주제
+------
+**딥러닝 기반의 이미지 분석기술을 활용한 분리배출 정보제공 앱**
+
+- 사용언어 : HTML5, CSS3, PHP, JavaScript, Python, Vue.js
+
+- 사용 IDE : Visual Studio Code
+
+- 기타 : BeauifulSoup, MariaDB, CodeIgniter
+
+- 스토리보드 : [:link:Figma 주소](https://www.figma.com/file/EndW5C53SPgRKAwudN9jcd/recycle?node-id=0%3A1)
+
+- DB 설계 tool : ERD Cloud [:link:ERD Cloud 주소](https://www.erdcloud.com/d/Jhbdz3qkTWXgCwCBY)
+
+- 라이브러리 : Requests, BeautifulSoup(크롤링)
+
+- 개발 기간 : 2022.08.29 ~
+
+- 개발팀 : BBOAAA(뽀아)
+
+- 역할분담
+  - 허영롱 : 스토리보드(피그마), 재활용 상세 페이지, 위치 정보를 활용한 지자체 연결
+  - 박은지 : 자료수집, Header 및 Footer, 메인 페이지, 지자체 홈페이지 웹 크롤링
+  - 황영은 : 설문조사, 검색 및 검색 결과 페이지, ajax를 활용한 알림 기능
+  - 황현 : DB 틀 작성, 딥러닝을 활용한 사진 분석, 스마트 카메라 페이지
+  - 김대홍 : 자료수진, 카테고리 페이지, 알림 페이지, 지자체 홈페이지 웹 크롤링
