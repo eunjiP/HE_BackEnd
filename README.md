@@ -10,7 +10,7 @@ https://cikorea.net/
 
 프로젝트명 : 행복하지구(With Earth)
 =====
-<img src="https://user-images.githubusercontent.com/101936519/185729612-9ea98b16-7dc0-4777-ad31-5e38d46f2520.png" width=200px>
+<img src="" width=200px>
 
 주제
 ------
@@ -24,7 +24,7 @@ https://cikorea.net/
 
 - 스토리보드 : [:link:Figma 주소](https://www.figma.com/file/EndW5C53SPgRKAwudN9jcd/recycle?node-id=0%3A1)
 
-- DB 설계 tool : ERD Cloud [:link:ERD Cloud 주소](https://www.erdcloud.com/d/Jhbdz3qkTWXgCwCBY)
+- DB 설계 tool : ERD Cloud [:link:ERD Cloud 주소]()
 
 - 라이브러리 : Requests, BeautifulSoup(크롤링)
 
