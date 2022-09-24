@@ -24,7 +24,7 @@ https://cikorea.net/
 
 - 스토리보드 : [:link:Figma 주소](https://www.figma.com/file/EndW5C53SPgRKAwudN9jcd/recycle?node-id=0%3A1)
 
-- DB 설계 tool : ERD Cloud [:link:ERD Cloud 주소]()
+- DB 설계 tool : ERD Cloud [:link:ERD Cloud 주소](https://www.erdcloud.com/d/Lduwfbse2KfebC3As)
 
 - 라이브러리 : Requests, BeautifulSoup(크롤링)
 
