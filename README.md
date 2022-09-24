@@ -10,7 +10,7 @@ https://cikorea.net/
 
 프로젝트명 : 행복하지구(With Earth)
 =====
-<img src="https://user-images.githubusercontent.com/101936519/192085781-f11281c4-80d8-452a-bd84-86503f8e816b.png" width=200px align:center>
+<p align:center><img src="https://user-images.githubusercontent.com/101936519/192085781-f11281c4-80d8-452a-bd84-86503f8e816b.png" width=200px></p>
 
 주제
 ------
