@@ -16,7 +16,7 @@ https://cikorea.net/
 ------
 **딥러닝 기반의 이미지 분석기술을 활용한 분리배출 정보제공 앱**
 
-- 사용언어 : HTML5, CSS3, PHP, JavaScript, Python, Vue.js
+- 사용언어 : HTML5, CSS3, PHP, JavaScript, Python
 
 - 사용 IDE : Visual Studio Code
 
