@@ -124,4 +124,6 @@ nb-configuration.xml
 /results/
 /phpunit*.xml
 /.phpunit.*.cache
-database.php
+Database.php
+
+.env
