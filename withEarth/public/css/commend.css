@@ -1,0 +1,21 @@
+:root {
+    --main--bg: #449B51;
+    /* 
+    추가하려는 색상 추가해주세요~
+    */
+}
+
+/* 글꼴 */
+@font-face {
+    font-family: 'bold';
+    src: url('../font/한국기계연구원_bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'light';
+    src: url('../font/한국기계연구원_Light.ttf') format('truetype');
+}
+
+* {
+    font-family: light;
+    color: #449B51;
+}
