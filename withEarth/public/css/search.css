@@ -1,5 +1,83 @@
-/* 단어 검색 */
+/* 공통 */
+img { display: inline-block;}
+.black { color: #000; }
+.sec-p { width:350px; margin:45px 31px 65px 31px;}
+.sec-title { font-size:18px; font-family: 'bold'; margin-bottom: 25px; }
 
+
+/* 단어 검색 */
+.input_sch input { width: 290px; padding: 10px 10px; border-radius: 25px; border:0.8px solid #d9d9d9; color: #d9d9d9;}
+
+.btn_sch { border:none; width: 30px; height: 30px; margin-left:5px; background-color: transparent;}
+.icon_sch { width: 30px; height: 30px; background: url(/search-icon.svg) no-repeat; background-size: cover; display: inline-block;vertical-align: middle;}
 /* 인기검색어 */
+.rank_sch li { color: #000; line-height: 1.5em; display: flex; justify-content: center; flex-wrap: nowrap;}
+
+.describeMyself {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1rem;
+    height: 4.5em;
+    font-weight: 600;
+    overflow: hidden;
+    z-index:2;
+}
+/* li 갯수에 맞춰서 */
+@keyframes rolling {
+    0% {
+        margin-top: 0;
+    }
+    10% {
+        margin-top: -1.5em;
+    }
+    20% {
+        margin-top: -3em;
+    }
+    30%{
+        margin-top: -4.5em;
+    }
+    40%{
+        margin-top:-6em;
+    }
+    50%{
+        margin-top:-7.5em;
+    }
+    60%{
+        margin-top:-9em;
+    }
+    70%{
+        margin-top:-10.5em;
+    }
+    80%{
+        margin-top:-12em;
+    }
+    90%{
+        margin-top:-13.5em;
+    }
+    100%{
+        margin-top:-15em;
+    }
+}
+.descriptionList {
+    padding-left: 0;
+    margin:0;
+    animation-name: rolling;
+    animation-duration: 33s;
+    animation-iteration-count: infinite;
+}
+
 
 /* 재질로 찾기 */
+
+.material_sch img { width: 40px; }
+.material_sch li { width:100px; height: 40px; float: left; margin-left:15px;}
+.material_sch li span { display: inline-block; font-weight: 600; font-size: 14px; color:#000; height: 40px; vertical-align: middle; margin-left:3px; }
+
+
+
+/* ======================= 검색결과 =========================== */
+#product-list { width: 100%; }
+#product-list thead th{ background-color: #d9d9d9; padding:10px 15px; color:#000; text-align: center; border: 1px solid #fff;}
+#product-list tbody td{ background-color: #f5f5f5; color:#000; text-align: center; font-size:0.8rem; vertical-align: middle; border: 1px solid #fff;}
+
+.pd_img { width:90px; height:90px; padding:8px;}
