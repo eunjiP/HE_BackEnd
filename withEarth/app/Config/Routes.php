@@ -38,6 +38,7 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('search', 'Search::search');
 $routes->post('search/searchProduct', 'Search::searchProduct');
+$routes->get('cate', 'cate::cate');
 
 
 /*
