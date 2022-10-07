@@ -20,7 +20,7 @@ class Search extends BaseController
         /*
             $result[ i_product => '1', productName => '라면봉지', ctnt => '재활용' ...]
         */
-        //var_export($result);
+        // var_export($result);
         return view('searchResult.php', $result);
         
     }

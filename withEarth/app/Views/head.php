@@ -10,6 +10,7 @@
     <link href="/css/reset.css" rel="stylesheet">
     <link href="/css/commend.css" rel="stylesheet">
     <link href="/css/search.css" rel="stylesheet">
+    <link href="/css/cate.css" rel="stylesheet">
     <title>행복하지구</title>
 </head>
 <body>
