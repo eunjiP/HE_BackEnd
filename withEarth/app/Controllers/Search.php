@@ -5,9 +5,9 @@ use App\Models\SearchModel;
 
 class Search extends BaseController
 {
-    public function search()
+    public function search()//라우터 경로에 들어갈 함수명
     {
-        return view('search_page.php');
+        return view('search_page.php');//띄울 view파일명
     }
 
     // 검색결과 없을 경우의 분기문 만들기
@@ -15,10 +15,10 @@ class Search extends BaseController
 
         $searchModel = new SearchModel(); // 모델 객체 생성
         $data = $this->request->getPost();// search_page의 form에서 받아온 데이터
-        
+        //var_export($data);
         $result = $searchModel->getProduct($data);
         /*
-            $result[ i_product => '1', productName => '라면봉지', ctnt => '재활용' ... ]
+            $result[ i_product => '1', productName => '라면봉지', ctnt => '재활용' ...]
         */
         // var_export($result);
         return view('searchResult.php', $result);

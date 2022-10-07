@@ -6,7 +6,7 @@ img { display: inline-block;}
 
 
 /* 단어 검색 */
-.input_sch input { width: 290px; padding: 10px 10px; border-radius: 25px; border:0.8px solid #d9d9d9; color: #d9d9d9;}
+.input_sch input { width: 290px; padding: 10px 10px; border-radius: 25px; border:0.8px solid #d9d9d9; color: #000;}
 
 .btn_sch { border:none; width: 30px; height: 30px; margin-left:5px; background-color: transparent;}
 .icon_sch { width: 30px; height: 30px; background: url(/search-icon.svg) no-repeat; background-size: cover; display: inline-block;vertical-align: middle;}
