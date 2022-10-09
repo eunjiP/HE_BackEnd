@@ -1,0 +1,42 @@
+/*헤더 css*/
+.header--nav {
+    height: 80px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
+    z-index: 1;
+}
+
+.header--nav .nav--addrees, .nav--search{
+    margin: 0 auto;
+}
+
+.header--nav .nav--logo img {
+    width: 90%;
+    margin-left: 15px;
+}
+
+.container {
+    height: 755px;
+}
+
+/*푸터 css*/
+.footer {
+    background-color: var(--main--bg);
+    height: 80px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    align-items: center;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+}
+
+.footer .footer__camera{
+    text-align: center;
+}
+
+.footer .footer__camera i {
+    color: var(--gray);
+    font-size: 3rem;
+}

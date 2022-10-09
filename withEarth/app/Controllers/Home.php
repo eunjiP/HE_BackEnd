@@ -13,7 +13,7 @@ class Home extends BaseController
 
     public function index()
     {
-        return view('header.php');
+        return view('main.php');
     }
 
     
