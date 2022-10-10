@@ -87,10 +87,28 @@
     font-weight: bold;
 }
 
+.main__img .main__textBox .main__icon i {
+    color: var(--main--bg);
+}
+
 .main__img .main__textBox .main__icon {
     position: absolute;
     bottom: 0;
     right: 0;
     margin: 5px;
     font-size: 3rem;
+}
+#locationModal .modal-content .modal-header {
+    border-bottom: none;
+}
+#locationModal, .modal-content {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+#locationModal .locationBtn {
+    background: var(--gray);
+    padding: 10px;
+    border-radius: 100%;
+    margin: 10px;
 }

@@ -12,7 +12,23 @@
                 <div class="fs-6">배출시간 : </div>
             </div>
             <div class="main__icon">
-                <i class="fa-solid fa-bars"></i>
+                <a href="#">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div  class="modal fade" id="locationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center mt-3">
+                <h5 class="modal-title bold">현재 위치를 설정하시겠습니까?</h5>
+            </div>
+            <div class="_modal_item text-center mb-3">
+                <button class="locationBtn">확인</button>
+                <button class="locationBtn" data-bs-dismiss="modal">취소</button>
             </div>
         </div>
     </div>

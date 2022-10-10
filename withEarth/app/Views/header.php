@@ -3,10 +3,10 @@
 ?>
 <nav class="header--nav fs-1">
     <div class="nav--addrees">
-        <a href="#" class="">
+        <div data-bs-toggle="modal" data-bs-target="#locationModal">
             <!--<img src="/img/main_icon/regin.png" alt="위치설정">-->
-            <i class="fa-sharp fa-solid fa-map-location-dot"></i>
-        </a>
+            <i class="fa-sharp fa-solid fa-map-location-dot"></i>   
+        </div>
     </div>
     <div class="nav--logo">
         <a href="/">
