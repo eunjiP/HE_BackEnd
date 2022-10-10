@@ -10,6 +10,12 @@ namespace App\Controllers;
 class Home extends BaseController
 {
     public $data = array();
+    public $db;
+
+    //DB연결 생성지
+    public function __construct() {
+        $this->db = \Config\Database::connect("default", false);
+    }
 
     public function index()
     {
