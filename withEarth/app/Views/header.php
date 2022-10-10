@@ -14,7 +14,7 @@
         </a>
     </div>
     <div class="nav--search">
-        <a href="#">
+        <a href="search">
             <i class="fa-solid fa-magnifying-glass"></i>
         </a>
     </div>
