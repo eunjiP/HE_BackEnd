@@ -2,7 +2,8 @@
 img { display: inline-block;}
 .black { color: #000; }
 .sec-p { width:350px; margin:45px 31px 65px 31px;}
-.sec-title { font-size:18px; font-family: 'bold'; margin-bottom: 25px; }
+.sec-title { font-size:18px; font-family: 'bold'; margin-bottom: 25px; color: var(--main--bg);}
+.sec-title-null {text-align: center; font-size:22px; font-family: 'bold';}
 
 
 /* 단어 검색 */
@@ -10,6 +11,8 @@ img { display: inline-block;}
 
 .btn_sch { border:none; width: 30px; height: 30px; margin-left:5px; background-color: transparent;}
 .icon_sch { width: 30px; height: 30px; background: url(/search-icon.svg) no-repeat; background-size: cover; display: inline-block;vertical-align: middle;}
+
+
 /* 인기검색어 */
 .rank_sch li { color: #000; line-height: 1.5em; display: flex; justify-content: center; flex-wrap: nowrap;}
 
@@ -68,9 +71,9 @@ img { display: inline-block;}
 
 
 /* 재질로 찾기 */
-
 .material_sch img { width: 40px; }
-.material_sch li { width:100px; height: 40px; float: left; margin-left:15px;}
+.material_list { display:flex; align-items:center; flex-wrap:wrap; }
+.material_list li { width:100px; height: 40px; margin:auto;}
 .material_sch li span { display: inline-block; font-weight: 600; font-size: 14px; color:#000; height: 40px; vertical-align: middle; margin-left:3px; }
 
 

@@ -17,11 +17,16 @@ class Search extends BaseController
         $data = $this->request->getPost();// search_page의 form에서 받아온 데이터
         //var_export($data);
         $result = $searchModel->getProduct($data);
-        /*
-            $result[ i_product => '1', productName => '라면봉지', ctnt => '재활용' ...]
-        */
+        $result['searchName'] = $data['productName'];
+
+        if(isset($result['i_product'])) {
+            return view('searchResult.php', $result);
+        } else {
+            $result['i_product'] = NULL;
+            return view('searchResult.php', $result);
+        }
+        
         // var_export($result);
-        return view('searchResult.php', $result);
         
     }
 }
