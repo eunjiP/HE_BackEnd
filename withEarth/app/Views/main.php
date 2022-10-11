@@ -49,9 +49,6 @@
                 <div class="fs-6">배출시간 : </div>
             </div>
             <div class="main__icon">
-<<<<<<< HEAD
-                <i class="fa-solid fa-bars"></i>
-=======
                 <a href="#">
                     <i class="fa-solid fa-bars"></i>
                 </a>
@@ -69,7 +66,6 @@
             <div class="_modal_item text-center mb-3">
                 <button class="locationBtn setLocation">확인</button>
                 <button class="locationBtn" data-bs-dismiss="modal">취소</button>
->>>>>>> dc17e014295378f20d83b6a7092369cf8a1e6818
             </div>
         </div>
     </div>
