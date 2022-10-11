@@ -4,7 +4,7 @@
 <script>
     //위치설정
     $(document).ready(function() {
-        $(setLocation).click(function(){
+        $(.setLocation).click(function(){
             var geocoder = new kakao.maps.services.Geocoder();
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(this.showPosition);
