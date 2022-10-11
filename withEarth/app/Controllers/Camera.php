@@ -6,6 +6,6 @@ class Camera extends BaseController
 {
     public function camera()
     {
-        return view('Camera.php');
+        return view('camera.php');
     }
 }
