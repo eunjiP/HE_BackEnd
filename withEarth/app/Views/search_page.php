@@ -35,21 +35,9 @@
     <div class="material_sch sec-p">
         <div class="sec-title"> 분류별 검색 </div>
         <ul class="material_list">
-<<<<<<< HEAD
-            <li><img src="/img/material_icon/1.png" alt=""><span>캔류</span></li>
-            <li><img src="/img/material_icon/2.png" alt=""><span>멸균팩</span></li>
-            <li><img src="/img/material_icon/3.png" alt=""><span>비닐류</span></li>
-            <li><img src="/img/material_icon/4.png" alt=""><span>플라스틱</span></li>
-            <li><img src="/img/material_icon/5.png" alt=""><span>종이</span></li>
-            <li><img src="/img/material_icon/6.png" alt=""><span>종이팩</span></li>
-            <li><img src="/img/material_icon/7.png" alt=""><span>페트</span></li>
-            <li><img src="/img/material_icon/8.png" alt=""><span>유리</span></li>
-            <li><img src="/img/material_icon/9.png" alt=""><span>불가능</span></li>
-=======
             <?php foreach($result as $li) :?>
                 <li><img src="/img/material_icon/<?= esc($li['i_cate'])?>.png" alt=""><span><?= esc($li['cateName'])?></span></li>
             <?php endforeach ?>
->>>>>>> dc17e014295378f20d83b6a7092369cf8a1e6818
         </ul>
     </div>
 </div>

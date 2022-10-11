@@ -1,12 +1,10 @@
 <?php
     include_once('header.php');
 ?>
-<<<<<<< HEAD
-=======
 <script>
     //위치설정
     $(document).ready(function() {
-        $(.setLocation).click(function(){
+        $(setLocation).click(function(){
             var geocoder = new kakao.maps.services.Geocoder();
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(this.showPosition);
@@ -40,7 +38,6 @@
     })
 </script>
 
->>>>>>> dc17e014295378f20d83b6a7092369cf8a1e6818
 <div class="container">
     <div class="main__img">
         <div class="main__textBox">
