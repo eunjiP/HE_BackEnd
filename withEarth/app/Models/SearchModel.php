@@ -4,14 +4,31 @@
 
     use CodeIgniter\Model;
 
-    class SearchModel extends Model {
+    class SearchModel extends Model{
 
-        protected $table = 'product';
-
-        public function getProduct($data) {
-            //return $this->where(['productName'=>$data])->first();
-            // 테스트로 하나만 가져왔음. 목록을 가져올땐 findAll
-            // $data [ 'productName' => 딘어 ]
-            return $this->like($data, 'both')->first();
+        public $db;
+    
+        public function __construct()
+        {
+            $this->db = \Config\Database::connect("default", false);
         }
+    
+        public function getProduct($data) {
+            $search = $data['productName'];
+
+            $sql = 
+            "SELECT A.i_product, A.productName, A.productImg, B.cateName FROM product A
+             INNER JOIN cate B
+                     ON A.i_cate = B.i_cate
+                  WHERE productName LIKE '%".$search."%'
+                     OR B.cateName LIKE '%".$search."%'
+            ";
+            return $this->db->query($sql)->getResultArray();
+        }
+
+        public function getCate() {
+            $sql = "SELECT * FROM cate";
+            return $this->db->query($sql)->getResultArray();
+        }
+    
     }

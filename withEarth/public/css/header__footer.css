@@ -1,0 +1,114 @@
+/*헤더 css*/
+.header--nav {
+    color: var(--main--bg);
+    width: 100%;
+    height: 80px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
+    z-index: 1;
+    border-bottom: 1px solid var(--main--bg);
+}
+
+.header--nav i {
+    color: var(--main--bg);
+}
+
+.header--nav .nav--addrees, .nav--search{
+    margin: 0 auto;
+    color: var(--main--bg);
+}
+
+.header--nav .nav--logo img {
+    height: 80px;
+    margin-left: 15px;
+}
+
+.container {
+    height: 750px;
+    padding: 0;
+    margin: 5px 0;
+}
+
+/*푸터 css*/
+.footer {
+    background-color: var(--main--bg);
+    height: 80px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    align-items: center;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+}
+
+.footer .footer__camera{
+    text-align: center;
+}
+
+.footer .footer__camera i {
+    color: var(--gray);
+    font-size: 3rem;
+}
+
+/*메인 css*/
+.main__img {
+    height: 100%;
+    margin: 0;
+    background: url("../img/main__img.jpg") center no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__img .main__textBox {
+    color: var(--main--bg);
+    position: relative;
+    padding-top: 5px;
+    background: #fff;
+    opacity: 0.7;
+    width: 390px;
+    height: 730px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__img .main__textBox .main__text {
+    display: grid;
+    grid-template-rows: 2fr 2fr 2fr 1fr;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    line-height: 25px;
+}
+
+.main__img .main__textBox .bold {
+    font-weight: bold;
+}
+
+.main__img .main__textBox .main__icon i {
+    color: var(--main--bg);
+}
+
+.main__img .main__textBox .main__icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 5px;
+    font-size: 3rem;
+}
+#locationModal .modal-content .modal-header {
+    border-bottom: none;
+}
+#locationModal, .modal-content {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+#locationModal .locationBtn {
+    background: var(--gray);
+    padding: 10px;
+    border-radius: 100%;
+    margin: 10px;
+}

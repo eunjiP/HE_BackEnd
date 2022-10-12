@@ -1,33 +1,37 @@
 <?php
-    include_once('head.php');
+    include_once('header.php');
 ?>
-<div>
-    검색결과 페이지
-</div>
 
-<div class="sec-p">
-    <div class="sec-title">'<?= esc($productName) ?>'의 검색결과 입니다.</div>
-    <!-- 컨트롤러에서 경로와 함께 보내준 배열의 키값을 직접선언 -->
+<div class="container">
+    <div class="sec-p">
+        <?php if($allResult['result'] !== null) { ?>
+            <div class="sec-title">'<?= esc($allResult['searchName'])?>' 의 검색결과 입니다.</div>
+                <table id="product-list">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>품목명</th>
+                            <th>배출 분류</th>
+                        </tr>
+                    </thead>
 
-    <table id="product-list">
-        <thead>
-            <tr>
-                <th></th>
-                <th>품목명</th>
-                <th>배출 분류</th>
-            </tr>
-        </thead>
-
-        <tbody><!-- 품목리스트 반복문 돌리기 -->
-            <tr>
-                <td class="pd_img"><?= esc($productImg)?></td>
-                <td><?= esc($productName)?></td>
-                <td><?= esc($ctnt)?></td>
-            </tr>
-        </tbody>
-    </table>
+                    <tbody>
+                        <?php foreach($allResult['result'] as $row) : ?>
+                        <tr>
+                            <td class="pd_img"><?= esc($row['productImg'])?></td>
+                            <td><?= esc($row['productName'])?></td>
+                            <td><?= esc($row['cateName'])?></td>
+                        </tr>
+                        <?php endforeach;?>
+                    </tbody>
+                </table> 
+            </div>
+        <?php } else { ?>
+            <div class="sec-title">'<?= esc($allResult['searchName'])?>' 의 검색결과가 없습니다.</div>
+            <span>다른 검색어를 입력해보세요.</span>
+        <?php } ?>
     </div>
-
+</div>
 <?php
     include_once('footer.php');
 ?>
