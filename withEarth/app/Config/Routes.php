@@ -38,7 +38,7 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('search', 'Search::search');//('경로', '컨트롤러명::메소드명');
 $routes->post('search/searchProduct', 'Search::searchProduct');
-$routes->get('cate', 'cate::cate');
+$routes->get('qna_write', 'qna::qna_write');
 $routes->get('camera', 'Camera::camera');
 
 
