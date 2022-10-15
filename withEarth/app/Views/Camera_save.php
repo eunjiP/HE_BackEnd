@@ -69,15 +69,13 @@
                 const classPrediction =
                     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
                 labelContainer.childNodes[i].innerHTML = classPrediction;
+
                 //결과에 따라 물품 출력
-                if(prediction[i].probability > 0.8){
+                if(prediction[i].probability > 0.9){
                     recognizeProduct.innerHTML = "지금 물품은 " + prediction[i].className + "입니다.";
-                    
-                    setTimeout(() => {
-                        location.href = "result?product="+prediction[i].className;
-                    }, 3000);
-                } else {
-                    recognizeProduct.innerHTML = "물품을 인식 중입니다.";
+                    // const  = setTimeout(() => {
+                    //  location.href = "result?product="+prediction[i].className;
+                    // }, 3000);
                 }
                 
             }
