@@ -24,6 +24,8 @@
 
         let model, webcam, labelContainer, maxPredictions;
 
+        
+
         // Load the image model and setup the webcam
         window.onload = async function() { // 사진(영상)을 인식
             const modelURL = URL + "model.json";
@@ -35,6 +37,8 @@
             // Note: the pose library adds "tmImage" object to your window (window.tmImage)
             model = await tmImage.load(modelURL, metadataURL);
             maxPredictions = model.getTotalClasses();
+
+            
 
             // Convenience function to setup a webcam
             const flip = true; // whether to flip the webcam
@@ -63,24 +67,33 @@
             // predict can take in an image, video or canvas html element
             const prediction = await model.predict(webcam.canvas);
             //prdiction은 배열형, className은 설정한 이름, probability는 설정한 이름의 확률
-            console.log(prediction[0].className);
 
             for (let i = 0; i < maxPredictions; i++) {
                 const classPrediction =
                     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
                 labelContainer.childNodes[i].innerHTML = classPrediction;
-
                 //결과에 따라 물품 출력
-                if(prediction[i].probability > 0.9){
+                if(prediction[i].probability > 0.8){
                     recognizeProduct.innerHTML = "지금 물품은 " + prediction[i].className + "입니다.";
-                    // const  = setTimeout(() => {
-                    //  location.href = "result?product="+prediction[i].className;
-                    // }, 3000);
+                } else {
+                    recognizeProduct.innerHTML = "물품을 인식 중입니다.";
                 }
-                
             }
+
+            setInterval(() => {
+                reco()
+            }, 3000);
+
+            const reco = () => {
+                if(prediction[0].probability > 0.9){
+                    location.href = "result?product="+prediction[0].className;
+                } else if(prediction[1].probability > 0.9){
+                    location.href = "result?product="+prediction[1].className;
+                } else if(prediction[2].probability > 0.9){
+                    location.href = "result?product="+prediction[2].className;
+                }
+             }
             
-        
         }
     </script>
 </body>
