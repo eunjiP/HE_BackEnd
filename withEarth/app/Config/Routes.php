@@ -40,6 +40,7 @@ $routes->get('search', 'Search::search');//('경로', '컨트롤러명::메소�
 $routes->post('search/searchProduct', 'Search::searchProduct');
 $routes->get('qna_write', 'qna::qna_write');
 $routes->get('camera', 'Camera::camera');
+$routes->get('menu', 'menu::menu');
 
 
 /*
