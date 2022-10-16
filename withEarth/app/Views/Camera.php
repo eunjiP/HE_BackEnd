@@ -79,12 +79,12 @@
             const prediction = await model.predict(webcam.canvas);
             //prdiction은 배열형, className은 설정한 이름, probability는 설정한 이름의 확률
 
-            // 실시간으로 className과 probability 출력
-            // for (let i = 0; i < maxPredictions; i++) {
-            //     const classPrediction =
-            //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            //     labelContainer.childNodes[i].innerHTML = classPrediction;
-            // }
+            //실시간으로 className과 probability 출력
+            for (let i = 0; i < maxPredictions; i++) {
+                const classPrediction =
+                    prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                labelContainer.childNodes[i].innerHTML = classPrediction;
+            }
 
             setInterval(() => {
                 showProbability();
@@ -93,7 +93,6 @@
             setInterval(() => {
                 callResultPage();
             }, 3000);
-
 
             const showProbability = () => {
                 for (let i = 0; i < maxPredictions; i++) {
