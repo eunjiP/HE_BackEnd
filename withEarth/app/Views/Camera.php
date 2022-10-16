@@ -1,4 +1,6 @@
-<?php include_once('header.php'); ?>
+<?php 
+    include_once('header.php');
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,28 +8,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 </head>
 <body>
     <!--<button type="button" onclick="init()"></button>-->
     <div id="webcam-container"></div>
     <div id="label-container"></div>
     <div id="recognize-product"></div>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <div id="loading"></div>
+    
 
     <script type="text/javascript">
         // More API functions here:
         // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
-
         // the link to your model provided by Teachable Machine export panel
+
         const URL = "https://teachablemachine.withgoogle.com/models/f1egbWt37/";
 
         let model, webcam, labelContainer, maxPredictions;
 
-        
+        const showLoading = () => {
+                const Loading = document.getElementById("loading");
+                Loading.innerHTML = "로딩중입니다.";
+             }
+
+        const hideLoading = () => {
+            const Loading = document.getElementById("loading");
+            Loading.innerHTML = '';
+            }
 
         // Load the image model and setup the webcam
-        window.onload = async function() { // 사진(영상)을 인식
+        const callCamera = async function() { // 사진(영상)을 인식
             const modelURL = URL + "model.json";
             const metadataURL = URL + "metadata.json";
 
@@ -38,14 +50,13 @@
             model = await tmImage.load(modelURL, metadataURL);
             maxPredictions = model.getTotalClasses();
 
-            
-
             // Convenience function to setup a webcam
             const flip = true; // whether to flip the webcam
             webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
             await webcam.setup(); // request access to the webcam
             await webcam.play();
             window.requestAnimationFrame(loop);
+            hideLoading();
 
             // append elements to the DOM
             document.getElementById("webcam-container").appendChild(webcam.canvas);
@@ -68,33 +79,40 @@
             const prediction = await model.predict(webcam.canvas);
             //prdiction은 배열형, className은 설정한 이름, probability는 설정한 이름의 확률
 
-            for (let i = 0; i < maxPredictions; i++) {
-                const classPrediction =
-                    prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-                labelContainer.childNodes[i].innerHTML = classPrediction;
-                //결과에 따라 물품 출력
-                if(prediction[i].probability > 0.8){
-                    recognizeProduct.innerHTML = "지금 물품은 " + prediction[i].className + "입니다.";
-                } else {
-                    recognizeProduct.innerHTML = "물품을 인식 중입니다.";
+            // 실시간으로 className과 probability 출력
+            // for (let i = 0; i < maxPredictions; i++) {
+            //     const classPrediction =
+            //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            //     labelContainer.childNodes[i].innerHTML = classPrediction;
+            // }
+
+            setInterval(() => {
+                showProbability();
+            }, 500);
+
+            setInterval(() => {
+                callResultPage();
+            }, 3000);
+
+
+            const showProbability = () => {
+                for (let i = 0; i < maxPredictions; i++) {
+                    if(prediction[i].probability > 0.75){
+                        recognizeProduct.innerHTML = "지금 물품은 " + prediction[i].className + "입니다.";
+                    }
                 }
             }
 
-            setInterval(() => {
-                reco()
-            }, 3000);
-
-            const reco = () => {
-                if(prediction[0].probability > 0.9){
-                    location.href = "result?product="+prediction[0].className;
-                } else if(prediction[1].probability > 0.9){
-                    location.href = "result?product="+prediction[1].className;
-                } else if(prediction[2].probability > 0.9){
-                    location.href = "result?product="+prediction[2].className;
+            const callResultPage = () => {
+                for (let i = 0; i < maxPredictions; i++) {
+                    if(prediction[i].probability > 0.9){
+                        location.href = "result?product="+prediction[i].className;
+                    }
                 }
              }
-            
         }
+        showLoading();
+        callCamera();
     </script>
 </body>
 </html>

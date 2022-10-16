@@ -25,7 +25,8 @@
         let model, webcam, labelContainer, maxPredictions;
 
         // Load the image model and setup the webcam
-        window.onload = async function() { // 사진(영상)을 인식
+        
+            window.onload = async function() { // 사진(영상)을 인식
             const modelURL = URL + "model.json";
             const metadataURL = URL + "metadata.json";
 
@@ -38,7 +39,7 @@
 
             // Convenience function to setup a webcam
             const flip = true; // whether to flip the webcam
-            webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+            webcam = new tmImage.Webcam(400, 700, flip); // width, height, flip
             await webcam.setup(); // request access to the webcam
             await webcam.play();
             window.requestAnimationFrame(loop);
@@ -71,17 +72,22 @@
                 labelContainer.childNodes[i].innerHTML = classPrediction;
 
                 //결과에 따라 물품 출력
-                if(prediction[i].probability > 0.9){
+                if(prediction[i].probability > 0.7){
                     recognizeProduct.innerHTML = "지금 물품은 " + prediction[i].className + "입니다.";
-                    // const  = setTimeout(() => {
-                    //  location.href = "result?product="+prediction[i].className;
-                    // }, 3000);
+                    if(prediction[1].probability > 0.9){
+                        location.href = "result?product="+prediction[1].className;
+                    } elseif(prediction[2].probability > 0.9){
+                        location.href = "result?product="+prediction[1].className;
+                    } elseif(prediction[3].probability > 0.9){
+                        location.href = "result?product="+prediction[1].className;
+                    }
                 }
                 
             }
             
-        
         }
+        
+        
     </script>
 </body>
 </html>
