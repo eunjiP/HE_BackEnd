@@ -1,0 +1,254 @@
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.one {
+  float: right;
+}
+
+ul li a {
+  text-decoration: none;
+  display: block;
+  width: 100px;
+  height: 50px;
+  /* line-height: 50px; */
+  text-align: center;
+  padding: 5px;
+}
+
+.one li:hover {
+  /* background-color: white; */
+  border: 1px solid var(--main--bg);
+}
+
+.none {
+  border: none !important;
+}
+
+.menu {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: none;
+  position: absolute;
+  top: 15%;
+  right: 15%;
+  z-index: 10;
+}
+
+.menu>.sub {
+  display: none;
+  height: 0px;
+  list-style: none;
+  overflow: hidden;
+}
+
+.menu>.sub li {
+  background-color: none;
+}
+
+.menu>.sub li>a {
+  text-decoration: none;
+  color: var(--main--bg);
+  font-size: large;
+  font-weight: bold;
+}
+
+.menu>.sub.up {
+  height: 0px;
+  animation-name: slide_up;
+  animation-duration: 1s;
+}
+
+.menu>.sub.down {
+  height: 250px;
+  animation-name: slide_down;
+  animation-duration: 1s;
+}
+
+@keyframes slide_up {
+  0% {
+    height: 250px;
+  }
+
+  100% {
+    height: 0px;
+  }
+}
+
+@keyframes slide_down {
+  0% {
+    height: 0px;
+  }
+
+  100% {
+    height: 250px;
+  }
+}
+
+#btn {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  background: none;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+}
+
+#btn span {
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  top: 50%;
+  left: 50%;
+  background: var(--main--bg);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: all 0.3s linear;
+}
+
+#btn span::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: gray;
+  transition: all 0.3s linear;
+}
+
+#btn span:nth-child(1) {
+  animation: span-first-off 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+#btn span:nth-child(2) {
+  animation: span-second-off 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+#btn span:nth-child(3) {
+  animation: span-third-off 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+#btn.on:hover span::before {
+  width: 100%;
+  transition: all 0.3s linear;
+}
+
+#btn.on span:nth-child(1) {
+  animation: span-first-on 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+#btn.on span:nth-child(2) {
+  animation: span-second-on 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+#btn.on span:nth-child(3) {
+  animation: span-third-on 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes span-first-on {
+  0% {
+    transform: translate(-50%, -300%);
+  }
+
+  30% {
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+@keyframes span-first-off {
+  0% {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  30% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -300%);
+  }
+}
+
+@keyframes span-second-on {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+
+  25% {
+    background: gray;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    transform: translate(-150%, -50%) scale(0);
+  }
+}
+
+@keyframes span-second-off {
+  0% {
+    transform: translate(-150%, -50%) scale(0);
+  }
+
+  25% {
+    background: gray;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes span-third-on {
+  0% {
+    transform: translate(-50%, 200%);
+  }
+
+  30% {
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}
+
+@keyframes span-third-off {
+  0% {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  30% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, 200%);
+  }
+}
