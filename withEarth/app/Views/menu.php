@@ -4,7 +4,7 @@
     </button>
     <ul class="sub up one">
         <li class="none">
-            <a href=""></a>
+            <a></a>
         </li>
         <li>
             <a href="#">Q & A</a>
