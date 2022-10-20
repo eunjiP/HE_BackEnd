@@ -53,6 +53,8 @@ ul li a {
 .menu>.sub li>a {
   text-decoration: none;
   color: var(--main--bg);
+  font-size: large;
+  font-weight: bold;
 }
 
 .menu>.sub.up {
