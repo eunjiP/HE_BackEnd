@@ -12,7 +12,7 @@
     <link href="/css/commend.css" rel="stylesheet">
     <link href="/css/search.css" rel="stylesheet">
     <link href="/css/header__footer.css" rel="stylesheet">
-    <link href="/css/cate.css" rel="stylesheet">
+    <link href="/css/menu.css" rel="stylesheet">
     <title>행복하지구</title>
 </head>
 <body>

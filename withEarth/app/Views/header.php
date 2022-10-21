@@ -1,5 +1,6 @@
 <?php
     include_once('head.php');
+    include_once('menu.php');
 ?>
 <nav class="header--nav fs-1">
     <div class="nav--addrees">
