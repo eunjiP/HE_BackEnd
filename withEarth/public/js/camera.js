@@ -5,14 +5,11 @@
     // the link to your model provided by Teachable Machine export panel
     const URL = "https://teachablemachine.withgoogle.com/models/f1egbWt37/";
 
-    const showLoading = () => {
-        const Loading = document.getElementById("loading");
-        Loading.innerHTML = "로딩중입니다.";
-     }
-
     const hideLoading = () => {
-        const Loading = document.getElementById("loading");
-        Loading.innerHTML = '';
+        const Loading = document.querySelector(".loading");
+        const pickCamera = document.querySelector(".pickCamera");
+        Loading.classList.toggle('d-none');
+        pickCamera.classList.toggle('d-none');
     }
 
     let model, webcam, labelContainer, maxPredictions;
@@ -55,25 +52,38 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
-        for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
-        }
+        // for (let i = 0; i < maxPredictions; i++) {
+        //     const classPrediction =
+        //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+        //     labelContainer.childNodes[i].innerHTML = classPrediction;
+        // }
     }
 
-    async function pickCamera (){
-        const prediction = await model.predict(webcam.canvas);
+    function pickCamera (){
         const pickCamera = document.querySelector(".pickCamera");
-        pickCamera.addEventListener("click", () => {
-            for (let i = 0; i < maxPredictions; i++) {
-                if(prediction[i].probability > 0.8){
-                    location.href = "result?product="+prediction[i].className;
-                } else {
-                    console.log("물품을 더 가까이 접근시켜주세요");
-                }
+        pickCamera.addEventListener("click", async () => {
+            let pickPre = await model.predict(webcam.canvas);
+            // console.log(pickPre);
+            // for (let i = 0; i < maxPredictions; i++) {
+            //     if(pickPre[i].probability > 0.8){
+            //         location.href = "result?product="+pickPre[i].className;
+            //         console.log(pickPre[i]);
+            //     } else {
+            //         console.log("물품을 더 가까이 접근시켜주세요");
+            //     }
+            // }
+            if(pickPre[0].probability > 0.8){
+                location.href = "result?product="+pickPre[0].className;
+            } else if (pickPre[1].probability > 0.8){
+                location.href = "result?product="+pickPre[1].className;
+            } else if (pickPre[2].probability > 0.8){
+                location.href = "result?product="+pickPre[2].className;
+            } else {
+                console.log("물품을 더 가까이 접근시켜주세요");
             }
-        })
+            
+        }
+        )
     }
         
     
